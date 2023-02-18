@@ -16,13 +16,13 @@ client.on(Events.ClientReady, () => {
 });
 
 client.on(Events.MessageUpdate, (oldm, newm) => {
-    if (newm.guildId !== '320896491596283906') return;
+    if (newm.guildId !==  config.guild_id) return;
     monitorLinks(newm)
     monitorInvites(client, newm)
 });
 
 client.on(Events.MessageCreate, (msg) => {
-    if (msg.guildId !== '320896491596283906') return;
+    if (msg.guildId !== config.guild_id) return;
     monitorLinks(msg)
     monitorInvites(client, msg)
 });
